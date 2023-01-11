@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <!-- HAY QUE PARAMETRIZAR TAMBIÉN LA DESCRIPCIÓN DEL ROBOT EN FORMATO URDF, CON OUSTER, CON REALSENSE, SIN SENSOR -->
+  <arg name="urdfdescription"         default="$(find arvc_ouster)/urdf/os1_128.urdf.xacro"/>
+  <!-- <arg name="urdfdescription"         default="$(find arvc_ouster)/urdf/TEST.urdf.xacro"/> -->
+
+  <param name="robot_description"     command="$(find xacro)/xacro $(arg urdfdescription)" />
+
+
+  <node name="robot_state_publisher"  pkg="robot_state_publisher" type="robot_state_publisher" />
+  <!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" /> -->
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find arvc_dataset_generator)/launch/empty_world.launch">
+    <!-- <arg name="world_name" value="$(find arvc_gazebo_ros_plugins)/worlds/empty_world.world"/> -->
+    <arg name="world_name" value="$(find arvc_dataset_generator)/worlds/test_world_2.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+  
+  <arg name="x" default="1"/>     <arg name="R" default="0" />
+  <arg name="y" default="1"/>  <arg name="P" default="0"/>
+  <arg name="z" default="2"/> <arg name="Y" default="0"/>
+  
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="model_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
+  args="-param robot_description -urdf -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y) -model os_128"/>
+
+</launch>

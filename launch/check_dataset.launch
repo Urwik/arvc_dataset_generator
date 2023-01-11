@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <arg name="dataset_path" default="/media/arvc/data/datasets/ARVC_GZF/test/ply/bin_class"/>  
+  <arg name="expected_n_points" default="25000"/>  
+
+  <node name="check_dataset" pkg="arvc_dataset_generator" type="arvc_check_dataset" 
+  args="$(arg dataset_path) $(arg expected_n_points)"/>
+
+</launch>
