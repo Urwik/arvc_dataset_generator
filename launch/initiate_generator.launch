@@ -7,8 +7,6 @@
   <arg name="urdfdescription"         default="$(find arvc_ouster)/urdf/os1_128.urdf.xacro"/>
 
   <param name="robot_description"     command="$(find xacro)/xacro $(arg urdfdescription)" />
-
-
   <node name="robot_state_publisher"  pkg="robot_state_publisher" type="robot_state_publisher" />
 
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
@@ -30,6 +28,4 @@
   <node name="model_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
   args="-param robot_description -urdf -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y) -model os_128"/>
 
-
-  <!-- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find hyrecro)/rviz/rviz_hyrecro_realsense.rviz" /> -->
 </launch>
