@@ -27,7 +27,7 @@
       <grid>0</grid>
     </scene>
     <light name='sun' type='directional'>
-      <cast_shadows>1</cast_shadows>
+      <cast_shadows>0</cast_shadows>
       <pose>0 0 10 0 -0 0</pose>
       <diffuse>1 1 1 1</diffuse>
       <specular>0.1 0.1 0.1 1</specular>
@@ -45,7 +45,7 @@
       </spot>
     </light>
     <light name='sun_diffuse' type='directional'>
-      <cast_shadows>1</cast_shadows>
+      <cast_shadows>0</cast_shadows>
       <pose>0 0 -10 0 -0 0</pose>
       <diffuse>1 1 1 1</diffuse>
       <specular>0.3 0.3 0.3 1</specular>
