@@ -2,6 +2,8 @@
 <launch>
   
   <!-- <env name="GAZEBO_PLUGIN_PATH"       value="/home/arvc/workSpaces/arvc_ws/devel/lib" /> -->
+  <env name="GAZEBO_MODEL_PATH" value="$(find arvc_dataset_generator)" />
+
 
   <!-- HAY QUE PARAMETRIZAR TAMBIÉN LA DESCRIPCIÓN DEL ROBOT EN FORMATO URDF, CON OUSTER, CON REALSENSE, SIN SENSOR -->
   <arg name="urdfdescription"         default="$(find arvc_ouster)/urdf/os1_128.urdf.xacro"/>
