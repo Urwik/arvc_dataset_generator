@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- <env name="GAZEBO_PLUGIN_PATH"       value="/home/arvc/workSpaces/arvc_ws/devel/lib" /> -->
+  <env name="GAZEBO_MODEL_PATH" value="$(find arvc_dataset_generator)" />
+  
+  <!-- ONLY CHANGE THIS VALUE -->
+  <arg name="world" value="inspection_geom"/>
+
+  <include file="$(find arvc_dataset_generator)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find arvc_dataset_generator)/worlds/$(arg world).world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+</launch>
