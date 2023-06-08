@@ -1,14 +1,14 @@
 ---
 plugin: 
-  out_dir: "/media/arvc/data/datasets/TEST_GENERATOR"
-  env_dir: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/enviroment" 
-  mod_dir: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/labeled_models"
-  cam_model: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/camera/model.sdf"
+  out_dir: "/home/fran/datasets/TEST_GENERATOR"
+  env_dir: "/home/fran/workSpaces/arvc_ws/src/arvc_dataset_generator/models/enviroment" 
+  mod_dir: "/home/fran/workSpaces/arvc_ws/src/arvc_dataset_generator/models/labeled_models"
+  cam_model: "/home/fran/workSpaces/arvc_ws/src/arvc_dataset_generator/models/camera/model.sdf"
   ground_model_name: "inspection_geom"
   sensor_name: "os_128"
   sensor_topic: "/os1/pointCloud"
   num_models: 20
-  num_env: 5
+  num_env: 10000
   negative_offset: [-0.5, -0.5, 0.0]
   positive_offset: [0.5, 0.5, 0.0]
   positive_dist: [10.0, 10.0, 5.0]
@@ -17,4 +17,5 @@ plugin:
   max_scale: [2.0, 0.5, 0.5]
   rand_mode: uniform
   pc_binary: true
-  debug_msgs: false
+  debug_msgs: true
+  paused: true
