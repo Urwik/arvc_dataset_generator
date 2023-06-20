@@ -1,12 +1,12 @@
 ---
 plugin: 
   out_dir: "/media/arvc/data/datasets/TEST_GENERATOR"
-  env_dir: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/enviroment" 
-  mod_dir: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/labeled_models"
   cam_model: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/camera/model.sdf"
-  ground_model_name: "inspection_geom"
+  fixed_model_name: "reticular_structure"
+  mobile_model_name: "os_128"
   sensor_name: "os_128"
   sensor_topic: "/os1/pointCloud"
+  cam_name: "camera_test"
   num_models: 20
   num_env: 10000
   negative_offset: [-0.5, -0.5, 0.0]
