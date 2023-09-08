@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <sdf version='1.7'>
   <world name='inspection_world'>
     <physics name='default_physics' default='1' type='ode'>
@@ -97,7 +98,7 @@
           <geometry>
             <mesh>
               <scale>2 2 1</scale>
-              <uri>/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/meshes/inspection_world.dae</uri>
+              <uri>model://meshes/inspection_world.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -119,7 +120,7 @@
           <geometry>
             <mesh>
               <scale>2 2 1</scale>
-              <uri>/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/meshes/inspection_world.dae</uri>
+              <uri>model://meshes/inspection_world.dae</uri>
             </mesh>
           </geometry>
         </visual>

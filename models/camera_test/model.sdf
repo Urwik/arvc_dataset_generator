@@ -6,7 +6,7 @@
       <inertial>
         <mass>0.1</mass>
       </inertial>
-      <sensor name='arvc_cam' type='camera'>
+      <sensor name='camera_test' type='camera'>
         <camera>
           <horizontal_fov>1.047</horizontal_fov>
           <image>
