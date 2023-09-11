@@ -1,6 +1,11 @@
 #include <iostream>
 #include <eigen3/Eigen/Dense>
 
+
+#include <filesystem>
+#include <ros/package.h>
+#include <yaml-cpp/yaml.h>
+
 using namespace std;
 
 namespace arvc{
@@ -99,4 +104,20 @@ namespace arvc{
         camera cameras;
         output_data out_data;
     };
+
+  //////////////////////////////////////////////////////////////////////////////
+  YAML::Node get_config()
+  {
+    namespace fs = std::filesystem;
+    
+    fs::path package_path(ros::package::getPath("arvc_dataset_generator"));
+    fs::path config_path = package_path / "config/dataset_generator_config.yaml";
+
+    std::cout << YELLOW << "YAML CONFIG PATH: " << RESET << "\n " << config_path.string().c_str() << std::endl;
+
+    this->config = YAML::LoadFile(config_path.string());
+  }
+
+
+
 }
