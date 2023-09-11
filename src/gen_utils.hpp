@@ -37,16 +37,20 @@ namespace arvc{
 
     class environment
     {
+
+        // CONSTRUCTORS
     environment(int arg)
     {
         model_base model[arg];
     }
 
     public:    
+        int num_env_models;   
         string world_name;
         bool insert_models;
         bool dynamic_models;
-        model_base model[5];   
+        model_base model[5];
+
     };
 
 
@@ -54,12 +58,11 @@ namespace arvc{
     {
     labeled(int arg)
     {
-        model_base model[num_models];   
+        model_base model[arg];   
     }
-    private:
-        int num_models;
 
     public:    
+        int num_lbld_models;
         bool insert_models;
         bool dynamic_models;
         model_base model[5];   
@@ -103,20 +106,24 @@ namespace arvc{
 
     class config
     {
-        config()
-        {
-            parse_config();
-        }
-          
     public:
         simulation sim;
         sensor sensors;
         camera cameras;
         output_data out_data;
 
-        environment env;
-        labeled lab;
+        int num_env_models;
+        int num_lbld_models;
 
+        // environment env;
+        // labeled lab;
+
+        config()
+        {
+            parse_config();
+            environment env(this->num_env_models);
+            labeled lab(this->num_lbld_models);
+        }
 
 
         void parse_config()
@@ -157,8 +164,9 @@ namespace arvc{
             this->env.world_name = config["environment"]["world_name"].as<string>();
             this->env.insert_models = config["environment"]["insert_models"].as<bool>();
             this->env.dynamic_models = config["environment"]["dynamic_models"].as<bool>();
+            this->env.num_env_models = sizeof(this->env.model) / sizeof(arvc::environment::model);
 
-            for (int i = 0 ; i <  sizeof(this->env.model) / sizeof(arvc::environment::model) ; i++)
+            for (int i = 0 ; i < this->env.num_env_models  ; i++)
             {
                 this->env.model[i].name = config["environment"]["model"][i]["name"].as<string>();
                 this->env.model[i].path = config["environment"]["model"][i]["path"].as<string>();
@@ -173,7 +181,25 @@ namespace arvc{
                 this->env.model[i].rotation_range = config["environment"]["model"][i]["rotation_range"].as<Eigen::Vector3f>();
             }
                 
+            // LABELED
+            this->lab.insert_models = config["labeled"]["insert_models"].as<bool>();
+            this->lab.dynamic_models = config["labeled"]["dynamic_models"].as<bool>();
+            this->lab.num_lbld_models = sizeof(this->lab.model) / sizeof(arvc::labeled::model);
 
+            for (int i = 0 ; i <  this->lab.num_lbld_models ; i++)
+            {
+                this->lab.model[i].name = config["labeled"]["model"][i]["name"].as<string>();
+                this->lab.model[i].path = config["labeled"]["model"][i]["path"].as<string>();
+                this->lab.model[i].num_models = config["labeled"]["model"][i]["num_models"].as<int>();
+                this->lab.model[i].rand_mode = config["labeled"]["model"][i]["rand_mode"].as<string>();
+                this->lab.model[i].min_scale = config["labeled"]["model"][i]["min_scale"].as<Eigen::Vector3f>();
+                this->lab.model[i].max_scale = config["labeled"]["model"][i]["max_scale"].as<Eigen::Vector3f>();
+                this->lab.model[i].negative_offset = config["labeled"]["model"][i]["negative_offset"].as<Eigen::Vector3f>();
+                this->lab.model[i].positive_offset = config["labeled"]["model"][i]["positive_offset"].as<Eigen::Vector3f>();
+                this->lab.model[i].positive_dist = config["labeled"]["model"][i]["positive_dist"].as<Eigen::Vector3f>();
+                this->lab.model[i].negative_dist = config["labeled"]["model"][i]["negative_dist"].as<Eigen::Vector3f>();
+                this->lab.model[i].rotation_range = config["labeled"]["model"][i]["rotation_range"].as<Eigen::Vector3f>();
+            }
 
 
         }
