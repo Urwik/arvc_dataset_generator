@@ -1,68 +1,93 @@
----
-plugin:
+# simulation parameters
+simulation:
+  paused: true  # start the simulation in paused mode (STEP-BY-STEP)
+  debug_msgs: false # cout debug messages
+  log_msgs: true # enable log messages
 
-  # simulation parameters
-  simulation:
-    paused: true #pause the simulation after a scene is generated
-    debug_msgs: true #print debug messages
-    log_msgs: true #saves in a log debug messages
+# sensor parameters
+sensor:
+  enable: true
+  name: "os_128" #sensor_name
+  topic: "/os1/pointCloud" #sensor_topic
+  path: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/sensor/model.sdf"
 
-  # sensor parameters
-  sensor:
-    enable: true
-    name: "os_128" #sensor_name
-    topic: "/os1/pointCloud" #sensor_topic
-    path: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/sensor/model.sdf"
+# camera parameters
+camera:
+  enable: true
+  name: "camera" #camera_name
+  topic: "/camera/image_raw" #camera_topic
+  path: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/camera/model.sdf"
 
-  # camera parameters
-  camera:
-    enable: true
-    name: "camera" #camera_name
-    topic: "/camera/depth/points" #camera_topic
-    path: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/camera/model.sdf"
+# output data parameters
+data:
+  enable: true
+  out_dir: "/media/arvc/data/datasets/TEST_GENERATOR"
+  quantity: 1000 #number of generated scenes
+  pc_binary: true
 
-  # output data parameters
-  data:
-    enable: true
-    out_dir: "/media/arvc/data/datasets/TEST_GENERATOR"
-    quantity: 1000 #number of generated scenes
-    pc_binary: true
+# world parameters
+environment:
+  world_model: "world" #path to the world model world_name
+  world_name: "world" #world_name
+  insert_models: true
+  dynamic_models: true  
+  
+  model: 
+    - ID: #ID for the model 
+      name: "plane_0" # name to set to the model
+      path: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/enviroment"  # path to the model
+      num_models: 20
+      rand_mode: uniform
+      min_scale: [1.0, 1.0, 1.0]
+      max_scale: [1.0, 1.0, 1.0]
+      negative_offset: [-0.5, -0.5, 0.0]
+      positive_offset: [0.5, 0.5, 0.0]
+      positive_dist: [30.0, 30.0, 30.0]
+      negative_dist: [-30.0, -30.0, -30.0]
+      rotation_range: [360, 360, 360] 
 
-  # world parameters
-  environment:
-    world_model: "world" #path to the world model world_name
-    insert_models: true
-    dynamic_models: true  
-    
-    model: 
-      - model0: #ID for the model 
-          name: "plane" # name to set to the model
-          path: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/enviroment"  # path to the model
-          num_models: 20
-          rand_mode: uniform
-          min_scale: [1.0, 1.0, 1.0]
-          max_scale: [1.0, 1.0, 1.0]
-          negative_offset: [-0.5, -0.5, 0.0]
-          positive_offset: [0.5, 0.5, 0.0]
-          positive_dist: [30.0, 30.0, 30.0]
-          negative_dist: [-30.0, -30.0, -30.0]
-          rotation_range: [360, 360, 360] 
+    - ID: #ID for the model 
+      name: "plane_1" # name to set to the model
+      path: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/enviroment"  # path to the model
+      num_models: 20
+      rand_mode: uniform
+      min_scale: [1.0, 1.0, 1.0]
+      max_scale: [1.0, 1.0, 1.0]
+      negative_offset: [-0.5, -0.5, 0.0]
+      positive_offset: [0.5, 0.5, 0.0]
+      positive_dist: [30.0, 30.0, 30.0]
+      negative_dist: [-30.0, -30.0, -30.0]
+      rotation_range: [360, 360, 360]
 
-  # labeled models parameters
-  labeled_models:
-    insert_models: true
-    dynamic_models: true
+      
+# labeled models parameters
+labeled_models:
+  insert_models: true
+  dynamic_models: true
 
-    model: 
-      - model0: #ID for the model 
-        name: "plane" # name to set to the model
-        path: "/home/arvc/workSpaces/arvc_ws/src/arvc_gazebo_models/simple_plane"  # path to the model
-        num_models: 20
-        rand_mode: uniform
-        min_scale: [1.0, 1.0, 1.0]
-        max_scale: [1.0, 1.0, 1.0]
-        negative_offset: [-0.5, -0.5, 0.0]
-        positive_offset: [0.5, 0.5, 0.0]
-        positive_dist: [30.0, 30.0, 30.0]
-        negative_dist: [-30.0, -30.0, -30.0]
-        rotation_range: [360, 360, 360]
+  model: 
+    - ID: #ID for the model 
+      name: "LAB_0" # name to set to the model
+      path: "/home/arvc/workSpaces/arvc_ws/src/arvc_gazebo_models/simple_plane"  # path to the model
+      num_models: 20
+      rand_mode: uniform
+      min_scale: [1.0, 1.0, 1.0]
+      max_scale: [1.0, 1.0, 1.0]
+      negative_offset: [-0.5, -0.5, 0.0]
+      positive_offset: [0.5, 0.5, 0.0]
+      positive_dist: [30.0, 30.0, 30.0]
+      negative_dist: [-30.0, -30.0, -30.0]
+      rotation_range: [360, 360, 360]
+
+    - ID: #ID for the model 
+      name: "LAB_1" # name to set to the model
+      path: "/home/arvc/workSpaces/arvc_ws/src/arvc_gazebo_models/simple_plane"  # path to the model
+      num_models: 20
+      rand_mode: uniform
+      min_scale: [1.0, 1.0, 1.0]
+      max_scale: [1.0, 1.0, 1.0]
+      negative_offset: [-0.5, -0.5, 0.0]
+      positive_offset: [0.5, 0.5, 0.0]
+      positive_dist: [30.0, 30.0, 30.0]
+      negative_dist: [-30.0, -30.0, -30.0]
+      rotation_range: [360, 360, 360]
