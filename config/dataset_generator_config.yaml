@@ -10,6 +10,7 @@ sensor:
   name: "os_128" #sensor_name
   topic: "/os1/pointCloud" #sensor_topic
   path: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/sensor/model.sdf"
+  offset: [1, 1, 1]
 
 # camera parameters
 camera:
