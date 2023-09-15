@@ -39,6 +39,7 @@ environment:
       name: "plane_0" # name to set to the model
       path: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/enviroment"  # path to the model
       num_models: 20
+      apply_sensor_offset: true
       rand_mode: uniform
       min_scale: [1.0, 1.0, 1.0]
       max_scale: [1.0, 1.0, 1.0]
@@ -53,6 +54,7 @@ environment:
       name: "plane_1" # name to set to the model
       path: "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/enviroment"  # path to the model
       num_models: 20
+      apply_sensor_offset: true
       rand_mode: uniform
       min_scale: [1.0, 1.0, 1.0]
       max_scale: [1.0, 1.0, 1.0]
@@ -74,6 +76,7 @@ labeled_models:
       name: "LAB_0" # name to set to the model
       path: "/home/arvc/workSpaces/arvc_ws/src/arvc_gazebo_models/simple_plane"  # path to the model
       num_models: 20
+      apply_sensor_offset: true
       rand_mode: uniform
       min_scale: [1.0, 1.0, 1.0]
       max_scale: [1.0, 1.0, 1.0]
@@ -88,6 +91,7 @@ labeled_models:
       name: "LAB_1" # name to set to the model
       path: "/home/arvc/workSpaces/arvc_ws/src/arvc_gazebo_models/simple_plane"  # path to the model
       num_models: 20
+      apply_sensor_offset: true
       rand_mode: uniform
       min_scale: [1.0, 1.0, 1.0]
       max_scale: [1.0, 1.0, 1.0]
