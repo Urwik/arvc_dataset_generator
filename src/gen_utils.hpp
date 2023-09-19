@@ -38,7 +38,7 @@ namespace arvc{
     class environment
     {
 
-        // CONSTRUCTORS
+    // CONSTRUCTORS
     environment(int arg)
     {
         model_base model[arg];
@@ -115,14 +115,14 @@ namespace arvc{
         int num_env_models;
         int num_lbld_models;
 
-        // environment env;
-        // labeled lab;
+        environment env;
+        labeled lab;
 
         config()
         {
             parse_config();
-            environment env(this->num_env_models);
-            labeled lab(this->num_lbld_models);
+            this->env = environment(this->num_env_models);
+            this->lab = labeled(this->num_lbld_models);
         }
 
 
@@ -200,10 +200,7 @@ namespace arvc{
                 this->lab.model[i].negative_dist = config["labeled"]["model"][i]["negative_dist"].as<Eigen::Vector3f>();
                 this->lab.model[i].rotation_range = config["labeled"]["model"][i]["rotation_range"].as<Eigen::Vector3f>();
             }
-
-
         }
-
     };
 
   //////////////////////////////////////////////////////////////////////////////
