@@ -121,7 +121,7 @@
           <geometry>
             <mesh>
               <scale>2 2 1</scale>
-              <uri>model://meshes/inspection_world.dae</uri>
+              <uri>model://inspection_geom/meshes/inspection_world.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -141,11 +141,12 @@
       <static>1</static>
       <pose>0 0 0 0 -0 0</pose>
     </model>
+   
     <state world_name='inspection_world'>
-      <sim_time>158 368000000</sim_time>
-      <real_time>158 820026902</real_time>
-      <wall_time>1669106728 753716325</wall_time>
-      <iterations>79184</iterations>
+      <sim_time>0 0</sim_time>
+      <real_time>0 0</real_time>
+      <wall_time>0 0</wall_time>
+      <iterations>0</iterations>
       <model name='inspection_geom'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -163,7 +164,8 @@
         <pose>0 0 -10 0 -0 0</pose>
       </light>
     </state>
-    <plugin name="arvc_gazebo_ros_dataset_generator" filename="libarvc_gazebo_ros_dataset_generator.so">
+
+    <!-- <plugin name="arvc_gazebo_ros_dataset_generator" filename="libarvc_gazebo_ros_dataset_generator.so"> -->
       <!-- <out_dir>/media/arvc/data/datasets/TEST_GENERATOR</out_dir>
       <env_dir>/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/enviroment</env_dir>
       <mod_dir>/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/labeled_models</mod_dir>
@@ -178,6 +180,7 @@
       <max_scale>2.0 0.5 0.5</max_scale>
       <rand_mode>uniform</rand_mode>
       <arvc_debug>true</arvc_debug> -->
-    </plugin>
+    <!-- </plugin> -->
+
   </world>
 </sdf>
