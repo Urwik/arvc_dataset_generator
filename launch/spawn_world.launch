@@ -4,7 +4,7 @@
   <env name="GAZEBO_MODEL_PATH" value="$(find arvc_gazebo_models)/models" />
   
   <!-- ONLY CHANGE THIS VALUE -->
-  <arg name="world" value="solar_lake"/>
+  <arg name="world" value="test_world_2"/>
 
   <include file="$(find arvc_dataset_generator)/launch/empty_world.launch">
     <arg name="world_name" value="$(find arvc_dataset_generator)/worlds/$(arg world).world"/>
