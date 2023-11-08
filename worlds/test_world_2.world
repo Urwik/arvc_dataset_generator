@@ -98,7 +98,7 @@
           <geometry>
             <mesh>
               <scale>2 2 1</scale>
-              <uri>model://meshes/inspection_world.dae</uri>
+              <uri>model://inspection_geom/meshes/inspection_world.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -120,7 +120,7 @@
           <geometry>
             <mesh>
               <scale>2 2 1</scale>
-              <uri>model://meshes/inspection_world.dae</uri>
+              <uri>model://inspection_geom/meshes/inspection_world.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -3536,7 +3536,7 @@
       </link>
       <pose>-13.2692 -4.67709 0 0 -0 0</pose>
     </model>
-    <plugin name="arvc_gazebo_ros_model_move" filename="libarvc_gazebo_ros_model_move.so">
+    <!-- <plugin name="arvc_gazebo_ros_model_move" filename="libarvc_gazebo_ros_model_move.so"> -->
       <!-- <out_dir>/home/fran/datasets/ARVC_GZF/test</out_dir>
       <num_env>1000</num_env>
       <positive_dist>2.0 2.0 4.0</positive_dist>
@@ -3544,6 +3544,6 @@
       <pc_binary>true</pc_binary>
       <rand_mode>uniform</rand_mode>
       <arvc_debug>true</arvc_debug> -->
-    </plugin>
+    <!-- </plugin> -->
   </world>
 </sdf>
