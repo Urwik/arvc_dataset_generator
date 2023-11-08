@@ -141,8 +141,8 @@ include_directories(
 # )
 
 # add_library(arvc_sdf_editor src/sdf_editor.cpp)
-add_executable(arvc_sdf_editor src/sdf_editor.cpp)
-target_link_libraries(arvc_sdf_editor ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${SDFormat_LIBRARIES}) 
+# add_executable(arvc_sdf_editor src/sdf_editor.cpp)
+# target_link_libraries(arvc_sdf_editor ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${SDFormat_LIBRARIES}) 
 
 add_executable(arvc_check_dataset src/check_dataset.cpp)
 target_link_libraries(arvc_check_dataset ${catkin_LIBRARIES} ${PCL_LIBRARIES}) 
