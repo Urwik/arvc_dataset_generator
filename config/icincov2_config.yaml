@@ -1,0 +1,19 @@
+common: 
+  out_dir: "/media/arvc/data/datasets/icinco/set001"
+  num_env: 10
+  save_pcd: true
+  pcd_binary: true
+  paused: false
+  debug_msgs: true
+
+collision:
+  model: "truss_orthogonal_555_2.000.20_t_u" # model to compute the collisions with the sensor
+
+sensor:
+  name: "os_128"
+  topic: "/os1/pointCloud"
+  collision_offset: 1 # % to increase the collision box of the original sensor
+
+poses:
+  offset: 2.0
+  rand_mode: uniform # uniform, gaussian
