@@ -1,13 +1,13 @@
 common: 
-  out_dir: "/media/arvc/data/datasets/icinco/set001"
-  num_env: 10
+  out_dir: "/home/fran/datasets/icinco/03"
+  num_env: 1000
   save_pcd: true
   pcd_binary: true
   paused: false
-  debug_msgs: true
+  debug_msgs: false
 
 collision:
-  model: "truss_orthogonal_555_2.000.20_t_u" # model to compute the collisions with the sensor
+  model: "truss_crossed_555_2.000.20_t_i_u_s" # model to compute the collisions with the sensor
 
 sensor:
   name: "os_128"

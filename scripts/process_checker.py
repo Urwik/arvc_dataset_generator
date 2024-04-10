@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import psutil
 import time
 import roslaunch
@@ -47,10 +48,10 @@ def run_launch(launch_path_):
 
 if __name__ == '__main__':
     p_names = ["gzserver", "gzclient"]
-    p_names = ["usb_cam_node", "roslaunch", "image_view"]
+    launch_path = "/home/fran/workSpaces/arvc_ws/src/arvc_dataset_generator/launch/icincov2_generator_launch.launch"
 
-    launch_path = "/opt/ros/noetic/share/usb_cam/launch/usb_cam-test.launch"
     run_launch(launch_path_=launch_path)
+
     while True:
         proc_list = get_processes_by_name(p_names)
         check_processes_live(proc_list_=proc_list)
