@@ -113,8 +113,8 @@
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <plugin name="dataset_generator" filename="libarvc_gazebo_ros_dataset_generator.so">
-      <yaml_config>/home/arvc/workSpaces/arvc_ws/src/arvc_gazebo_ros_plugins/config/train_generator.yaml</yaml_config>
+    <plugin name="generator_plugin" filename="libarvc_gazebo_ros_dataset_generator.so">
+      <yaml_config>/home/fran/workSpaces/arvc_ws/src/arvc_gazebo_ros_plugins/config/train_generator.yaml</yaml_config>
     </plugin>
   </world>
 </sdf>
