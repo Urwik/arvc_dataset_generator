@@ -48,7 +48,7 @@ def run_launch(launch_path_):
 
 if __name__ == '__main__':
     p_names = ["gzserver", "gzclient"]
-    launch_path = "/home/fran/workSpaces/arvc_ws/src/arvc_dataset_generator/launch/icincov2_generator_launch.launch"
+    launch_path = "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/launch/icincov2_generator_launch.launch"
 
     run_launch(launch_path_=launch_path)
 

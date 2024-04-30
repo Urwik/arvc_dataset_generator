@@ -1,10 +1,10 @@
 common: 
-  out_dir: "/home/fran/datasets/icinco/06"
+  out_dir: "/media/arvc/data/datasets/icinco/06"
   num_env: 1000
   save_pcd: true
   pcd_binary: true
   paused: false
-  debug_msgs: false
+  debug_msgs: true
 
 collision:
   model: "truss" # model to compute the collisions with the sensor
