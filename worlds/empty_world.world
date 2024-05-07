@@ -113,7 +113,7 @@
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <plugin name="arvc_gazebo_ros_spawn_model" filename="libarvc_gazebo_ros_spawn_model.so">
+    <!-- <plugin name="arvc_gazebo_ros_spawn_model" filename="libarvc_gazebo_ros_spawn_model.so">
       <root_dir></root_dir>
       <file_path>model://models/labeled_models/simple_block.sdf</file_path>
       <num_models>10</num_models>
@@ -125,6 +125,6 @@
       <min_scale>0.1 0.1 0.1</min_scale>
       <max_scale>2.0 2.0 2.0</max_scale>
       <rand_mode>uniform</rand_mode>
-    </plugin>
+    </plugin> -->
   </world>
 </sdf>

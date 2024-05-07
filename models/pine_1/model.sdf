@@ -16,17 +16,17 @@
         </inertia>
         <mass>1.0</mass>
       </inertial>
-      <!-- <collision name="collision">
+      <collision name="collision">
         <geometry>
           <mesh>
-            <uri>/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/pine_1/meshes/pine_1.dae</uri>
+            <uri>model://pine_1/meshes/pine_1.dae</uri>
           </mesh>
         </geometry>
-      </collision> -->
+      </collision>
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/models/pine_1/meshes/pine_1.dae</uri>
+            <uri>model://pine_1/meshes/pine_1.dae</uri>
           </mesh>
         </geometry>
         <material>
