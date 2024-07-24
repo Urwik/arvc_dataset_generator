@@ -31,7 +31,6 @@ def check_processes_live(proc_list_):
     
         time.sleep(10)
 
-
 def kill_processes(proc_list_):
     for proc in proc_list_:
         try:
@@ -58,12 +57,12 @@ def get_num_files_in_directory(directory_path):
 
 if __name__ == '__main__':
     p_names = ["gzserver", "gzclient"]
-    launch_path = "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/launch/train_generator.launch" # Modify
+    launch_path = "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/launch/ac_test_generator.launch" # Modify
+    pcd_path = "/home/arvc/datasets/retTruss_Test/new/05/pcd" # Modify
 
     roscore = run_roscore()
     run_launch(launch_path_=launch_path)
 
-    pcd_path = "/home/arvc/datasets/retTruss/09/pcd" # Modify
 
     while get_num_files_in_directory(pcd_path) < 1000:
         proc_list = get_processes_by_name(p_names)
@@ -74,6 +73,6 @@ if __name__ == '__main__':
     kill_processes(proc_list_=proc_list)
     roscore.kill()
     print(f'All processes killed, roscore killed. Exiting...')
-    os.system('poweroff')
+    # os.system('poweroff')
     
-
+    
