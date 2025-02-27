@@ -12,7 +12,7 @@ launch-prefix="valgrind --tool=callgrind --callgrind-out-file=/home/user/callgri
     <arg name="world_name" value="$(find arvc_gazebo_models)/worlds/train.world"/>
     <arg name="paused" value="true"/>
     <arg name="use_sim_time" value="true"/>
-    <arg name="gui" value="false"/>
+    <arg name="gui" value="true"/>
     <arg name="recording" value="false"/>
     <arg name="debug" value="false"/>
     <arg name="verbose" value="true"/>
