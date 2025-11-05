@@ -1,39 +1,39 @@
 physics: false
-debug: true
+debug: false
 
 generator:
-  paused: true
+  paused: false
   iteration_delay: 1500 #ms
   items_to_generate: 1000
   ground_name: "ground_geom"
   data:
     save: true
-    out_dir: "/home/fran/datasets/retTruss_Test/complex_structure/03"
+    out_dir: "/home/arvc/datasets/arvc_truss/test/crossed"
     binary: true
 
 sensor:
   name: "os1"
   topic: "/os1/pointCloud" #debe coincidir con el topic del sensor en el archivo sdf del sensor
-  model_path: "/home/fran/workSpaces/arvc_ws/src/arvc_gazebo_models/models/os1_gpu" #cpu not working
+  model_path: "/home/arvc/workspaces/arvc_ws/src/arvc_gazebo_models/models/ouster_os1_gpu" #cpu not working
   collision_offset: 0.05 #m
   move: true
   position:
     x: 0
     y: 0
     z: 0.5
-  height: [1, 2]
+  height: [1, 2] #not implemented yet
 
 world:
   name: ""
-  model_path: "/home/fran/workSpaces/arvc_ws/src/arvc_gazebo_models/models/empty_world"
+  model_path: "/home/arvc/workspaces/arvc_ws/src/arvc_dataset_generator/worlds/crossed_v2.world"
 
 structure:
-  model_name: "complex_structure_3"
-  z_offset: 0.0
+  model_name: "crossed_1044_2.000.15_TIS"
+  z_offset: 1.0
 
 environment:
   item_count: 50
-  model_path: "/home/fran/workSpaces/arvc_ws/src/arvc_gazebo_models/models/pine_1"
+  model_path: "/home/arvc/workspaces/arvc_ws/src/arvc_gazebo_models/models/pine_1"
   move: true
   change_iteration: 100 #randomize the models each X iteration. If 0, the models will not change
   scale: [0.5, 3]

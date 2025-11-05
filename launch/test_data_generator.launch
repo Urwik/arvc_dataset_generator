@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <!-- ENVIRONMENT VARIABLES FOR GAZEBO PLUGINS AND MODELS, PREFERENCE TO SET IN .bashrc -->
+  <!-- <env name="GAZEBO_PLUGIN_PATH"       value="/home/arvc/workspaces/arvc_ws/devel/lib" /> -->
+  <!-- <env name="GAZEBO_MODEL_PATH" value="$(find arvc_gazebo_models)" /> -->
+
+
+  <!-- HAY QUE PARAMETRIZAR TAMBIÉN LA DESCRIPCIÓN DEL ROBOT EN FORMATO URDF, CON OUSTER, CON REALSENSE, SIN SENSOR -->
+  <arg name="urdfdescription"         default="$(find arvc_ouster)/urdf/os1_128.urdf.xacro"/>
+
+  <param name="robot_description"     command="$(find xacro)/xacro $(arg urdfdescription)" />
+  <node name="robot_state_publisher"  pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <arg name="world_file" default="$(find arvc_dataset_generator)/worlds/crossed_v2.world"/>
+
+
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find arvc_dataset_generator)/launch/empty_world.launch">
+    <!-- <arg name="world_name" value="$(find arvc_gazebo_ros_plugins)/worlds/empty_world.world"/> -->
+    <arg name="world_name" value="$(arg world_file)"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="false"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+  
+
+  <!-- SENSOR IS NO LONGER NEEDED TO BE INSERTED HERE, WORLD PLUGIN ALREADY DOES  -->
+
+</launch>

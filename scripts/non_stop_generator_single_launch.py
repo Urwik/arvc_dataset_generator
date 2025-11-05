@@ -57,8 +57,8 @@ def get_num_files_in_directory(directory_path):
 
 if __name__ == '__main__':
     p_names = ["gzserver", "gzclient"]
-    launch_path = "/home/arvc/workSpaces/arvc_ws/src/arvc_dataset_generator/launch/ac_test_generator.launch" # Modify
-    pcd_path = "/home/arvc/datasets/retTruss_Test/new/05/pcd" # Modify
+    launch_path = "/home/arvc/workspaces/arvc_ws/src/arvc_dataset_generator/launch/test_data_generator.launch" # Modify
+    pcd_path = "/home/arvc/datasets/arvc_truss/test/crossed/pcd" # Modify
 
     roscore = run_roscore()
     run_launch(launch_path_=launch_path)
