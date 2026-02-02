@@ -12,7 +12,7 @@
   <param name="robot_description"     command="$(find xacro)/xacro $(arg urdfdescription)" />
   <node name="robot_state_publisher"  pkg="robot_state_publisher" type="robot_state_publisher" />
 
-  <arg name="world_file" default="$(find arvc_dataset_generator)/worlds/crossed_v2.world"/>
+  <arg name="world_file" default="$(find arvc_dataset_generator)/worlds/orthogonal_v2.world"/>
 
 
 
@@ -22,7 +22,7 @@
     <arg name="world_name" value="$(arg world_file)"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
-    <arg name="gui" value="false"/>
+    <arg name="gui" value="true"/>
     <arg name="recording" value="false"/>
     <arg name="debug" value="false"/>
   </include>

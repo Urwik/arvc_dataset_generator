@@ -8,7 +8,7 @@ generator:
   ground_name: "ground_geom"
   data:
     save: true
-    out_dir: "/home/fran/datasets/RIAI_25"
+    out_dir: "/home/fran/datasets/USELESS"
     binary: true
 
 sensor:
@@ -24,7 +24,7 @@ sensor:
 
 paralellepipeds:
   item_count: 100
-  model_path: "/home/fran/workspaces/arvc_ws/src/arvc_gazebo_models/models/BASE_MODELS/simple_block_v2_shadowed_plain_color"
+  model_path: "/home/fran/workspaces/arvc_ws/src/arvc_gazebo_models/models/BASE_MODELS/simple_block_v2_shadowed"
   move: true
   label_per_face: true
   change_iteration: 100 #randomize the models each X iteration. If 0, the models will not change
